@@ -3,11 +3,11 @@ let pencil = canvas.getContext("2d"); // This gives you the drawing context, lik
 
 import { Star } from "./star.js";
 
-let mySpecialStar = new Star(canvas, pencil);
-mySpecialStar.draw();
-
+//add all stars to the array
 let stars = [
-    mySpecialStar
+    new Star(canvas, pencil),
+    new Star(canvas, pencil),
+    new Star(canvas, pencil)
 ];
 
 function gameLoop() {
