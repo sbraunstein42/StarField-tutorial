@@ -33,14 +33,12 @@ function gameLoop() {
     for(let i = 0; i < stars.length; i++) {
         stars[i].move();
         stars[i].draw();
+        stars[i].tryToRecycle();
     }
-    //recycle stars/restart stars
-
-
 
 }
 
-setInterval(gameLoop, 50);
+setInterval(gameLoop, 10);
 
 
 
