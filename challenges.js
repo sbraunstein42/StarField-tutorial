@@ -6,22 +6,30 @@ import { Star } from "./star.js";
 //add all stars to the array
 let stars = [];
 
-for(let i = 0; i < 100; i++) {
+let howManyStars = 100;
+
+
+for(let i = 0; i < howManyStars; i++) {
     let newStar = new Star(canvas, pencil);
     stars.push(newStar)
 }
 
-console.log(stars.length);
+function drawSpace() {
+    // Set the fill color
+    pencil.fillStyle = 'black';
+    // Draw a filled rectangle at (10, 10) with width 100 and height 50
+    pencil.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+//erase the canvas
+function clearScreen() {
+    pencil.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 function gameLoop() {
     
-
-
-    //erase the canvas
-    pencil.clearRect(0, 0, canvas.width, canvas.height);
-    //draw background
-    //draw stars
-    //move stars
+    clearScreen();
+    drawSpace();
     for(let i = 0; i < stars.length; i++) {
         stars[i].move();
         stars[i].draw();
